@@ -1,2 +1,0 @@
-# KendoManager
-My First Laravel 
