@@ -6,7 +6,6 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
-
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
@@ -20,6 +19,20 @@
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('test') ? ' has-error' : '' }}">
+                            <label for="test" class="col-md-4 control-label">Test</label>
+
+                            <div class="col-md-6">
+                                <input id="test" type="text" class="form-control" name="test" value="{{ old('test') }}" required autofocus>
+
+                                @if ($errors->has('test'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('test') }}</strong>
                                     </span>
                                 @endif
                             </div>
